@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDF0">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STUDYMATE"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:background="@drawable/stroke_bg"
+                android:paddingHorizontal="30dp"
+                android:paddingVertical="8dp"/>
+
+            <FrameLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/circle_profile_bg"
+                android:padding="3dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/profile_user"
+                        android:scaleType="centerCrop" />
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_below="@id/header"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/stroke_bg"
+            android:hint="Search Notes"
+            android:paddingLeft="15dp"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="10dp"
+            android:inputType="text"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/searchBar"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="100dp"
+            android:clipToPadding="false">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:padding="15dp">
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="150dp" android:layout_columnWeight="1" android:layout_margin="10dp"
+                    android:background="@drawable/folder_shape" android:backgroundTint="#D1E8E2" android:gravity="bottom|center_horizontal" android:paddingBottom="15dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Science" android:textStyle="bold|italic" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="150dp" android:layout_columnWeight="1" android:layout_margin="10dp"
+                    android:background="@drawable/folder_shape" android:backgroundTint="#AED9E0" android:gravity="bottom|center_horizontal" android:paddingBottom="15dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mathematics" android:textStyle="bold|italic" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="150dp" android:layout_columnWeight="1" android:layout_margin="10dp"
+                    android:background="@drawable/folder_shape" android:backgroundTint="#8DB4C3" android:gravity="bottom|center_horizontal" android:paddingBottom="15dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="English" android:textStyle="bold|italic" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="150dp" android:layout_columnWeight="1" android:layout_margin="10dp"
+                    android:background="@drawable/folder_shape" android:backgroundTint="#E5E7E9" android:gravity="bottom|center_horizontal" android:paddingBottom="15dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="History" android:textStyle="bold|italic" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="150dp" android:layout_columnWeight="1" android:layout_margin="10dp"
+                    android:background="@drawable/folder_shape" android:backgroundTint="#C5E1A5" android:gravity="bottom|center_horizontal" android:paddingBottom="15dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Geography" android:textStyle="bold|italic" android:textColor="#000000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp" android:layout_height="150dp" android:layout_columnWeight="1" android:layout_margin="10dp"
+                    android:background="@drawable/folder_shape" android:backgroundTint="#F5B7B1" android:gravity="bottom|center_horizontal" android:paddingBottom="15dp" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Computer Science" android:textStyle="bold|italic" android:textColor="#000000"/>
+                </LinearLayout>
+
+            </GridLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#FFDBE9"
+        app:menu="@null" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_add_button"
+        app:layout_anchor="@id/bottomNavigation"
+        app:layout_anchorGravity="center"
+        app:fabCustomSize="65dp"
+        app:maxImageSize="65dp"
+        app:borderWidth="0dp"
+        app:elevation="8dp"
+        app:backgroundTint="@android:color/transparent"
+        app:tint="@null" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

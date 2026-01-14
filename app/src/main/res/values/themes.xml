@@ -1,0 +1,4 @@
+<resources>
+    <style name="Theme.StudyMateApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+    </style>
+</resources>
