@@ -1,107 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDFBF0">
 
-    <LinearLayout
-        android:id="@+id/headerArea"
+    <RelativeLayout
+        android:id="@+id/headerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="15dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="STUDYMATE"
-                android:layout_centerHorizontal="true"
-                android:padding="10dp"
-                android:background="#FCE4EC"
-                android:textStyle="bold"
-                android:textColor="#000000"/>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/stroke_bg"
+            android:gravity="center"
+            android:text="STUDYMATE"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/profileIcon"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/profile_user"
-                android:clickable="true"
-                android:focusable="true" />
-        </RelativeLayout>
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/btnProfile"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_user"
+            app:shapeAppearanceOverlay="@style/CircleImage" />
+    </RelativeLayout>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:background="#FFFFFF"
-            android:hint="Search Notes"
-            android:padding="12dp"
-            android:drawableStart="@android:drawable/ic_menu_search"
-            android:drawablePadding="10dp"/>
-    </LinearLayout>
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/headerLayout"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/stroke_bg"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="10dp"
+        android:hint="Search Notes"
+        android:paddingStart="15dp"
+        android:importantForAutofill="no"
+        android:inputType="text" />
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFolders"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/headerArea"
-        android:layout_above="@id/bottomBar">
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:padding="10dp">
-
-            <LinearLayout
-                android:id="@+id/folderScience"
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"
-                android:orientation="vertical" android:gravity="center" android:padding="10dp">
-                <ImageView android:layout_width="110dp" android:layout_height="90dp" android:src="@drawable/folder_green_dark" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Science" android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"
-                android:orientation="vertical" android:gravity="center" android:padding="10dp">
-                <ImageView android:layout_width="110dp" android:layout_height="90dp" android:src="@drawable/folder_blue_light" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mathematics" android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"
-                android:orientation="vertical" android:gravity="center" android:padding="10dp">
-                <ImageView android:layout_width="110dp" android:layout_height="90dp" android:src="@drawable/folder_blue_dark" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="English" android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"
-                android:orientation="vertical" android:gravity="center" android:padding="10dp">
-                <ImageView android:layout_width="110dp" android:layout_height="90dp" android:src="@drawable/folder_grey" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="History" android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"
-                android:orientation="vertical" android:gravity="center" android:padding="10dp">
-                <ImageView android:layout_width="110dp" android:layout_height="90dp" android:src="@drawable/folder_green_light" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Geography" android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1"
-                android:orientation="vertical" android:gravity="center" android:padding="10dp">
-                <ImageView android:layout_width="110dp" android:layout_height="90dp" android:src="@drawable/folder_pink" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Computer Science" android:textStyle="bold" />
-            </LinearLayout>
-
-        </GridLayout>
-    </ScrollView>
+        android:layout_below="@id/etSearch"
+        android:layout_above="@id/bottomBar"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="10dp" />
 
     <RelativeLayout
         android:id="@+id/bottomBar"
@@ -109,11 +63,17 @@
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:background="#FCE4EC">
-        <ImageView
-            android:id="@+id/navAdd"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+
+        <ImageButton
+            android:id="@+id/btnAddFolder"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_centerInParent="true"
-            android:src="@drawable/ic_add_button" />
+            android:background="@drawable/circle_profile_bg"
+            android:backgroundTint="#F8BBD0"
+            android:src="@android:drawable/ic_input_add"
+            app:tint="#4CAF50"
+            android:contentDescription="Add Folder" />
     </RelativeLayout>
+
 </RelativeLayout>

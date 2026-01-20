@@ -2,7 +2,7 @@ package com.example.studymateapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
 class WelcomeActivity : AppCompatActivity() {
@@ -10,14 +10,13 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
 
-        // Cari ID butang Google (Pastikan ID dalam XML adalah btnGoogle)
-        val btnGoogle = findViewById<LinearLayout>(R.id.btnGoogle)
+        val btnGoogle = findViewById<Button>(R.id.btnGoogleSignIn)
 
         btnGoogle.setOnClickListener {
-            // Pergi ke NotesActivity
+            // Berpindah ke NotesActivity bila butang ditekan
             val intent = Intent(this, NotesActivity::class.java)
             startActivity(intent)
-            finish() // Tutup skrin Welcome supaya tak boleh tekan back balik
+            finish() // Menutup page Welcome supaya tidak boleh back ke sini semula
         }
     }
 }

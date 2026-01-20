@@ -7,72 +7,68 @@
     <View
         android:layout_width="400dp"
         android:layout_height="250dp"
-        android:layout_marginTop="-100dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/circle_shape"
+        android:layout_marginTop="-100dp"
+        android:background="@drawable/circle_profile_bg"
         android:backgroundTint="#FCE4EC" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_centerInParent="true"
         android:gravity="center"
-        android:layout_marginTop="80dp">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <ImageView
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:src="@drawable/logo" /> <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="StudyMate"
-        android:textSize="22sp"
-        android:textStyle="bold|italic"
-        android:textColor="#000000"
-        android:layout_marginTop="10dp" />
+            android:src="@drawable/logo_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StudyMate"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="WELCOME"
-            android:textSize="40sp"
+            android:textSize="32sp"
             android:textStyle="bold"
             android:textColor="#000000"
-            android:layout_marginTop="120dp" />
+            android:layout_marginTop="30dp" />
 
-        <LinearLayout
-            android:id="@+id/btnGoogle"
-            android:layout_width="300dp"
+        <Button
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="40dp"
-            android:background="@drawable/button_round"
-            android:backgroundTint="#F8BBD0"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:clickable="true"
-            android:focusable="true">
-
-            <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@drawable/google" /> <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/stroke_bg"
+            android:backgroundTint="#FFFFFF"
+            android:drawableStart="@drawable/google"
+            android:drawablePadding="15dp"
+            android:paddingStart="20dp"
             android:text="Continue with Google"
             android:textColor="#000000"
+            android:textAllCaps="false"
             android:textStyle="bold"
-            android:layout_marginStart="15dp" />
-        </LinearLayout>
+            android:elevation="2dp" />
+
     </LinearLayout>
 
     <View
-        android:layout_width="400dp"
-        android:layout_height="250dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-120dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/circle_shape"
+        android:layout_marginBottom="-100dp"
+        android:background="@drawable/circle_profile_bg"
         android:backgroundTint="#FCE4EC" />
 
 </RelativeLayout>

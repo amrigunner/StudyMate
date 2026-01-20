@@ -1,20 +1,36 @@
 package com.example.studymateapp
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class AddFolderActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_add_folder)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val btnBack = findViewById<ImageButton>(R.id.btnBackAddFolder)
+        val btnSave = findViewById<Button>(R.id.btnSaveFolder)
+        val etFolderName = findViewById<EditText>(R.id.etFolderName)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
+
+        btnSave.setOnClickListener {
+            val name = etFolderName.text.toString()
+            if (name.isNotEmpty()) {
+                // Hantar data balik menggunakan Intent
+                val resultIntent = Intent()
+                resultIntent.putExtra("NEW_FOLDER_NAME", name)
+                setResult(RESULT_OK, resultIntent)
+                finish()
+            } else {
+                etFolderName.error = "Please enter name"
+            }
         }
     }
 }

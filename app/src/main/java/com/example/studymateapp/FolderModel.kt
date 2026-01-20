@@ -1,4 +1,6 @@
 package com.example.studymateapp
 
-class FolderModel {
-}
+data class FolderModel(
+    val name: String,
+    val color: String // Untuk simpan kod warna pastel
+)
