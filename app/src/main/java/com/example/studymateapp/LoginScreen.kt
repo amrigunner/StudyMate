@@ -90,8 +90,8 @@ fun LoginScreen(onLoginClick: () -> Unit) {
                     )
                     Spacer(modifier = Modifier.width(15.dp))
                     Text(
-                        text = "Continue with Google",
-                        fontSize = 16.sp,
+                        text = "Sign In",
+                        fontSize = 17.sp,
                         fontWeight = FontWeight.Bold,
                         fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
                     )

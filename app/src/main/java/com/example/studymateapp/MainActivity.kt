@@ -9,7 +9,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Memanggil fungsi LoginScreen daripada LoginScreen.kt
+        // call login screen function instead of LoginScreen.kt
         setContent {
             LoginScreen(onLoginClick = {
                 val intent = Intent(this, NotesActivity::class.java)
